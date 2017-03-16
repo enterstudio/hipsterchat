@@ -31,7 +31,7 @@ export let greetNewUsers = functions.auth.user().onCreate(event => {
     })
 });
 
-export let iouMuffin = functions.analytics.event('feedback_sent').onLog(async event => {
+export let iouMuffin = functions.analytics.event('feedback_sent').onLog(event => {
   const userId = event.data.user.userId;
   return admin.database().ref('muffinClub').transaction(value => {
     // Only have 12 muffins to give away:
