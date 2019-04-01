@@ -2,11 +2,17 @@
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "dependencies": {
-    "@google-cloud/translate": "^0.7.0",
-    "firebase-admin": "^4.1.2",
+    "@google-cloud/translate": "^0.8.0",
+    "firebase-admin": "^5.4.3",
     "firebase-functions": "^0.5",
     "request": "^2.81.0",
-    "request-promise": "^4.1.1"
+    "request-promise": "^4.1.1",
+    "snyk": "^1.145.0"
   },
-  "private": true
+  "private": true,
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
